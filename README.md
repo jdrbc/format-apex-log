@@ -24,4 +24,4 @@ Usage
 
 Use one of the following:
 - Bring up the command palette (it's `⌘ + shift + p`  in OS X and `ctrl + shift + p` in Windows or Linux) and type `format-apex-log` and select `format-apex-log: Format This Apex Log` command.
-- Use `ctrl + alt + e
+- Use `ctrl + alt + e`
