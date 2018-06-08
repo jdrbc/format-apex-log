@@ -1,6 +1,6 @@
 import sublime, sublime_plugin
 
-class FormatSalesforceLogCommand(sublime_plugin.TextCommand):
+class FormatApexLogCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         self.format(edit)
         self.foldAllTags()
@@ -16,20 +16,22 @@ class FormatSalesforceLogCommand(sublime_plugin.TextCommand):
         for line in lines:
             # format the contents
             contents = '\n' + view.substr(line) + '\n'
-            if 'USER_DEBUG' in contents:
-                formattedString += self.formatUserDebugLine(contents)
+            if 'USER_DEBUG' in contents or 'FATAL_ERROR' in contents:
+                formattedString += self.formatLine(contents)
             elif 'SYSTEM_MODE_' not in contents:
-                # don't include in formatted contents
+                # don't include System mode in formatted contents
                 formattedString +=  contents
 
         # replace contents with the formatted contents
         view.replace(edit, wholeViewRegion, '\n' + formattedString)
 
-    def formatUserDebugLine(self, contents):
+    def formatLine(self, contents):
         numTabs = 0
         tab = ' ' * 4
         formattedString = ''
         contentsSplit = contents.split('|DEBUG|')
+        if (len(contentsSplit) != 2):
+            contentsSplit = contents.split('|FATAL_ERROR|')
         if (len(contentsSplit) != 2):
             return contents
         else:
