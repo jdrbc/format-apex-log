@@ -1,7 +1,7 @@
 Format Apex Log
 =============
 
-Sublime text plugin that formats, highlights and folds apex log files.
+Sublime text plugin that formats, highlights and folds [apex log files](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_debugging_debug_log.htm).
 
 Apex logs are difficult to read without additional spacing, this plugin will make apex logs easier to read. The plugin:
     
