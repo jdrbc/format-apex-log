@@ -17,11 +17,12 @@ Apex logs are difficult to read without additional spacing, this plugin will mak
 Installation
 ============
 
-- Clone source code to Sublime Text packages folder.
+* Install via [sublime text package control](https://packagecontrol.io/packages/Format%20Apex%20Log) search for 'format apex log'
+* To manually install clone source code to Sublime Text packages folder.
 
 Usage
 =====
 
 Use one of the following:
-- Bring up the command palette (it's `⌘ + shift + p`  in OS X and `ctrl + shift + p` in Windows or Linux) and type `format-apex-log` and select `format-apex-log: Format This Apex Log` command.
-- Use `ctrl + alt + e`
+* Bring up the command palette (it's `⌘ + shift + p`  in OS X and `ctrl + shift + p` in Windows or Linux) and type `format-apex-log` and select `format-apex-log: Format This Apex Log` command.
+* Use `ctrl + alt + e`
