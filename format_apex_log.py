@@ -29,7 +29,15 @@ class FormatApexLogCommand(sublime_plugin.TextCommand):
         numTabs = 0
         tab = ' ' * 4
         formattedString = ''
-        contentsSplit = contents.split('|DEBUG|')
+        
+        if ('|DEBUG|' in contents):
+            split = '|DEBUG|'
+        elif ('|INFO|' in contents):
+            split = '|INFO|'
+        elif ('|WARN|' in contents):
+            split = '|WARN|'
+
+        contentsSplit = contents.split(split)
         if (len(contentsSplit) != 2):
             contentsSplit = contents.split('|FATAL_ERROR|')
         if (len(contentsSplit) != 2):
